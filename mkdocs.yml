@@ -4,4 +4,6 @@ pages:
   - Plugin: plugin.md
   - Tips: tips.md
 theme: readthedocs
+docs_dir: notes
+site_dir: docs
 

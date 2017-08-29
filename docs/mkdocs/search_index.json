@@ -1,0 +1,79 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Aurelia Notes\n\n\nPreface\n\n\nThese notes comes from you and me. If the collected and doctored notes would\nsave you an hour, tell me and I will be glad.\n\n\nIntroduction\n\n\nAurelia\n is an emerging MVC framework to compete against Angular version 2. The\naurelia community felt calm towards React, Vue.js though. Because there lacks of\ndocumentation, similar to Angular 1 in 2012, it is hard to find what you want\nin once place. Hence, this note try to address the gap.\n\n\nBias\n\n\nAll my notes are based on \nwebpack+typescript version of Aurelia\n.\n\n\nLicense\n\n\nHave not thought about it yet. I may turn it into a book if the content attracts\ngood audience.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#aurelia-notes", 
+            "text": "", 
+            "title": "Aurelia Notes"
+        }, 
+        {
+            "location": "/#preface", 
+            "text": "These notes comes from you and me. If the collected and doctored notes would\nsave you an hour, tell me and I will be glad.", 
+            "title": "Preface"
+        }, 
+        {
+            "location": "/#introduction", 
+            "text": "Aurelia  is an emerging MVC framework to compete against Angular version 2. The\naurelia community felt calm towards React, Vue.js though. Because there lacks of\ndocumentation, similar to Angular 1 in 2012, it is hard to find what you want\nin once place. Hence, this note try to address the gap.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/#bias", 
+            "text": "All my notes are based on  webpack+typescript version of Aurelia .", 
+            "title": "Bias"
+        }, 
+        {
+            "location": "/#license", 
+            "text": "Have not thought about it yet. I may turn it into a book if the content attracts\ngood audience.", 
+            "title": "License"
+        }, 
+        {
+            "location": "/plugin/", 
+            "text": "Aurelia Plugin\n\n\nA plugin is a modular code that can be independently configured and shared with\nother projects.\n\n\nHow to write a built-in aurelia plugin?\n\n\nStep 1\n\n\nCreate a new folder named \"myplugin\" and write up three files::\n\n\ntemplate\n\ntest.html\n\n/template\n\n\n\n\n\nexport class TestMe{\n  contructor (){\n    console.log(\nI am a test controller\n);\n  }\n}\n\n\n\n\nimport {Aurelia} from 'aurelia-framework';\n\nexport function configure(aurelia: Aurelia){\n  aurelia.globalResources('./test');\n}\n\n\n\n\nStep 2\n\n\nIn your main.ts, add\n\n\n.plugin(PLATFORM.moduleName('oauth'))\n\n\n\n\nStep 3\n\n\nIn webpack.config.js, add\n\n\nplugins: [\n  new AureliaPlugin({\n    includeSubModules: [\n      {moduleId: 'myplugin'}\n    ]\n  }),..\n  new ModuleDependenciesPlugin({\n    'myplugin': ['./test']\n  }),", 
+            "title": "Plugin"
+        }, 
+        {
+            "location": "/plugin/#aurelia-plugin", 
+            "text": "A plugin is a modular code that can be independently configured and shared with\nother projects.", 
+            "title": "Aurelia Plugin"
+        }, 
+        {
+            "location": "/plugin/#how-to-write-a-built-in-aurelia-plugin", 
+            "text": "", 
+            "title": "How to write a built-in aurelia plugin?"
+        }, 
+        {
+            "location": "/plugin/#step-1", 
+            "text": "Create a new folder named \"myplugin\" and write up three files::  template \ntest.html /template   export class TestMe{\n  contructor (){\n    console.log( I am a test controller );\n  }\n}  import {Aurelia} from 'aurelia-framework';\n\nexport function configure(aurelia: Aurelia){\n  aurelia.globalResources('./test');\n}", 
+            "title": "Step 1"
+        }, 
+        {
+            "location": "/plugin/#step-2", 
+            "text": "In your main.ts, add  .plugin(PLATFORM.moduleName('oauth'))", 
+            "title": "Step 2"
+        }, 
+        {
+            "location": "/plugin/#step-3", 
+            "text": "In webpack.config.js, add  plugins: [\n  new AureliaPlugin({\n    includeSubModules: [\n      {moduleId: 'myplugin'}\n    ]\n  }),..\n  new ModuleDependenciesPlugin({\n    'myplugin': ['./test']\n  }),", 
+            "title": "Step 3"
+        }, 
+        {
+            "location": "/tips/", 
+            "text": "Tips for angular 1 users\n\n\ncall \n$injector\n as a function\n\n\nWith angular 1, you can use \n$injector\n function to do custom depdency injection. With\nAurelia, I am struggled and found a similar function:\n\n\nimport {Your_Class} from 'your_plugin';\n\n... // any where there is aurelia : Aurelia\n\nconst single_instance = aurelia.container.get(Your_Class);\n...", 
+            "title": "Tips"
+        }, 
+        {
+            "location": "/tips/#tips-for-angular-1-users", 
+            "text": "", 
+            "title": "Tips for angular 1 users"
+        }, 
+        {
+            "location": "/tips/#call-injector-as-a-function", 
+            "text": "With angular 1, you can use  $injector  function to do custom depdency injection. With\nAurelia, I am struggled and found a similar function:  import {Your_Class} from 'your_plugin';\n\n... // any where there is aurelia : Aurelia\n\nconst single_instance = aurelia.container.get(Your_Class);\n...", 
+            "title": "call $injector as a function"
+        }
+    ]
+}
