@@ -1,0 +1,7 @@
+site_name: Aurelia Notes
+pages:
+  - Home: index.md
+  - Plugin: plugin.md
+  - Tips: tips.md
+theme: readthedocs
+
