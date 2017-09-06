@@ -61,9 +61,34 @@
             "title": "Step 3"
         }, 
         {
+            "location": "/documentation/", 
+            "text": "Documentation tools\n\n\nA list of tools have been evaluated for documenting aurelia+typscript based projects:\n\n\n\n\ntypedoc\n\n\nesdoc + esdoc typescript plugin\n\n\ntsdoc\n\n\ncompodoc\n\n\n\n\nThe evaluation requirement is: one command, and get me the documentation please.\n\n\nOnly compodoc does the documention job nicely without a piece of complaint. Other three\ntools do not do the job as simple as the requirement is. Do not waste your time using\nthose three.", 
+            "title": "Doc"
+        }, 
+        {
+            "location": "/documentation/#documentation-tools", 
+            "text": "A list of tools have been evaluated for documenting aurelia+typscript based projects:   typedoc  esdoc + esdoc typescript plugin  tsdoc  compodoc   The evaluation requirement is: one command, and get me the documentation please.  Only compodoc does the documention job nicely without a piece of complaint. Other three\ntools do not do the job as simple as the requirement is. Do not waste your time using\nthose three.", 
+            "title": "Documentation tools"
+        }, 
+        {
+            "location": "/bdd/", 
+            "text": "BDD test\n\n\nNightwatch VS Protractor\n\n\nRecently, nightwatch.js+cucumber.js were pitched against protractor for behavior driven tests. Well,\nit fails to compete as it could not complete a simple bdd test task:\n\n\n# features/documentation.feature\nFeature: Example feature\n  As a user of aurelia.js\n  I want to have documentation on aurelia\n  So that I can concentrate on building awesome applications\n\n  Scenario: Reading documentation\n    Given I am on the aurelia js org web site\n    When I click on \nselect your role.\n\n    Then I should see \nAre you a Web Dev?\n\n\n\n\n\nAnd what's worse, it started to report \"PASS\" for obviously failing tests. And it could not\neven produce a screenshot to prove it is right.\n\n\nThings may change but here are the things under the test:\n\n\n  \ndependencies\n: {\n    \nchromedriver\n: \n^2.31.0\n,\n    \ncucumber\n: \n^3.0.0\n,\n    \ngeckodriver\n: \n^1.8.1\n,\n    \nnightwatch\n: \n^0.9.16\n,\n    \nnightwatch-cucumber\n: \n^8.0.4\n,\n    \nphantomjs-prebuilt\n: \n^2.1.15\n,\n    \nselenium-server\n: \n^3.5.0\n\n  }", 
+            "title": "BDD"
+        }, 
+        {
+            "location": "/bdd/#bdd-test", 
+            "text": "", 
+            "title": "BDD test"
+        }, 
+        {
+            "location": "/bdd/#nightwatch-vs-protractor", 
+            "text": "Recently, nightwatch.js+cucumber.js were pitched against protractor for behavior driven tests. Well,\nit fails to compete as it could not complete a simple bdd test task:  # features/documentation.feature\nFeature: Example feature\n  As a user of aurelia.js\n  I want to have documentation on aurelia\n  So that I can concentrate on building awesome applications\n\n  Scenario: Reading documentation\n    Given I am on the aurelia js org web site\n    When I click on  select your role. \n    Then I should see  Are you a Web Dev?   And what's worse, it started to report \"PASS\" for obviously failing tests. And it could not\neven produce a screenshot to prove it is right.  Things may change but here are the things under the test:     dependencies : {\n     chromedriver :  ^2.31.0 ,\n     cucumber :  ^3.0.0 ,\n     geckodriver :  ^1.8.1 ,\n     nightwatch :  ^0.9.16 ,\n     nightwatch-cucumber :  ^8.0.4 ,\n     phantomjs-prebuilt :  ^2.1.15 ,\n     selenium-server :  ^3.5.0 \n  }", 
+            "title": "Nightwatch VS Protractor"
+        }, 
+        {
             "location": "/tips/", 
             "text": "Tips for angular 1 users\n\n\ncall \n$injector\n as a function\n\n\nWith angular 1, you can use \n$injector\n function to do custom depdency injection. With\nAurelia, I am struggled and found a similar function:\n\n\nimport {Your_Class} from 'your_plugin';\n\n... // any where there is aurelia : Aurelia\n\nconst single_instance = aurelia.container.get(Your_Class);\n...", 
-            "title": "Tips"
+            "title": "Tips for Anglar 1 users"
         }, 
         {
             "location": "/tips/#tips-for-angular-1-users", 

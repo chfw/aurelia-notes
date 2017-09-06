@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-08-29</lastmod>
+     <lastmod>2017-09-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,23 @@
     
     <url>
      <loc>/plugin/</loc>
-     <lastmod>2017-08-29</lastmod>
+     <lastmod>2017-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/documentation/</loc>
+     <lastmod>2017-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/bdd/</loc>
+     <lastmod>2017-09-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +36,7 @@
     
     <url>
      <loc>/tips/</loc>
-     <lastmod>2017-08-29</lastmod>
+     <lastmod>2017-09-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

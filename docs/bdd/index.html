@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Plugin - Aurelia Notes</title>
+  <title>BDD - Aurelia Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Plugin";
-    var mkdocs_page_input_path = "plugin.md";
-    var mkdocs_page_url = "/plugin/";
+    var mkdocs_page_name = "BDD";
+    var mkdocs_page_input_path = "bdd.md";
+    var mkdocs_page_url = "/bdd/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -52,21 +52,9 @@
     <a class="" href="..">Home</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Plugin</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#aurelia-plugin">Aurelia Plugin</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#how-to-write-a-built-in-aurelia-plugin">How to write a built-in aurelia plugin?</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../plugin/">Plugin</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -74,9 +62,21 @@
     <a class="" href="../documentation/">Doc</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../bdd/">BDD</a>
+    <a class="current" href="./">BDD</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#bdd-test">BDD test</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#nightwatch-vs-protractor">Nightwatch VS Protractor</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -106,7 +106,7 @@
     
       
     
-    <li>Plugin</li>
+    <li>BDD</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -116,47 +116,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="aurelia-plugin">Aurelia Plugin</h1>
-<p>A plugin is a modular code that can be independently configured and shared with
-other projects.</p>
-<h2 id="how-to-write-a-built-in-aurelia-plugin">How to write a built-in aurelia plugin?</h2>
-<h3 id="step-1">Step 1</h3>
-<p>Create a new folder named "myplugin" and write up three files::</p>
-<pre><code>&lt;template&gt;
-test.html
-&lt;/template&gt;
+                <h1 id="bdd-test">BDD test</h1>
+<h2 id="nightwatch-vs-protractor">Nightwatch VS Protractor</h2>
+<p>Recently, nightwatch.js+cucumber.js were pitched against protractor for behavior driven tests. Well,
+it fails to compete as it could not complete a simple bdd test task:</p>
+<pre><code># features/documentation.feature
+Feature: Example feature
+  As a user of aurelia.js
+  I want to have documentation on aurelia
+  So that I can concentrate on building awesome applications
+
+  Scenario: Reading documentation
+    Given I am on the aurelia js org web site
+    When I click on &quot;select your role.&quot;
+    Then I should see &quot;Are you a Web Dev?&quot;
 </code></pre>
 
-<pre><code>export class TestMe{
-  contructor (){
-    console.log(&quot;I am a test controller&quot;);
+<p>And what's worse, it started to report "PASS" for obviously failing tests. And it could not
+even produce a screenshot to prove it is right.</p>
+<p>Things may change but here are the things under the test:</p>
+<pre><code>  &quot;dependencies&quot;: {
+    &quot;chromedriver&quot;: &quot;^2.31.0&quot;,
+    &quot;cucumber&quot;: &quot;^3.0.0&quot;,
+    &quot;geckodriver&quot;: &quot;^1.8.1&quot;,
+    &quot;nightwatch&quot;: &quot;^0.9.16&quot;,
+    &quot;nightwatch-cucumber&quot;: &quot;^8.0.4&quot;,
+    &quot;phantomjs-prebuilt&quot;: &quot;^2.1.15&quot;,
+    &quot;selenium-server&quot;: &quot;^3.5.0&quot;
   }
-}
-</code></pre>
-
-<pre><code>import {Aurelia} from 'aurelia-framework';
-
-export function configure(aurelia: Aurelia){
-  aurelia.globalResources('./test');
-}
-</code></pre>
-
-<h3 id="step-2">Step 2</h3>
-<p>In your main.ts, add</p>
-<pre><code>.plugin(PLATFORM.moduleName('oauth'))
-</code></pre>
-
-<h3 id="step-3">Step 3</h3>
-<p>In webpack.config.js, add</p>
-<pre><code>plugins: [
-  new AureliaPlugin({
-    includeSubModules: [
-      {moduleId: 'myplugin'}
-    ]
-  }),..
-  new ModuleDependenciesPlugin({
-    'myplugin': ['./test']
-  }),
 </code></pre>
               
             </div>
@@ -165,10 +152,10 @@ export function configure(aurelia: Aurelia){
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../documentation/" class="btn btn-neutral float-right" title="Doc">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tips/" class="btn btn-neutral float-right" title="Tips for Anglar 1 users">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../documentation/" class="btn btn-neutral" title="Doc"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -194,10 +181,10 @@ export function configure(aurelia: Aurelia){
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../documentation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../documentation/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../tips/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -2,7 +2,9 @@ site_name: Aurelia Notes
 pages:
   - Home: index.md
   - Plugin: plugin.md
-  - Tips: tips.md
+  - Doc: documentation.md
+  - BDD: bdd.md
+  - Tips for Anglar 1 users: tips.md
 theme: readthedocs
 docs_dir: notes
 site_dir: docs
